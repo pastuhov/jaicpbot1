@@ -37,7 +37,8 @@
       "name" : "duckling.phone-number",
       "entity" : "duckling.phone-number",
       "required" : true,
-      "prompts" : [ ]
+      "prompts" : [ ],
+      "array" : false
     } ],
     "priority" : 0
   }, {
