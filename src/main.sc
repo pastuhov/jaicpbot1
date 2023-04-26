@@ -108,7 +108,7 @@ theme: /
     state: SendRequest
         intent!: /send request
         script:
-            var payload = $caila.inflect($parseTree._geo, ["nomn"]);
+            var payload = $caila.inflect($parseTree._url, ["nomn"]);
             sendRequest(payload).then(function (res) {
                 if (res && res.inspect) {
                     $reactions.answer("Запрос отправлен, вот тут глянь " + res.inspect );

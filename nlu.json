@@ -23,6 +23,24 @@
     }
   },
   "intents" : [ {
+    "path" : "/send request",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "отправь запрос с урлом @duckling.url"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "slots" : [ {
+      "name" : "duckling.url",
+      "entity" : "duckling.url",
+      "required" : true,
+      "prompts" : [ "Урл то какой?", "Что по урлу?", "Урл укажи!" ]
+    } ],
+    "priority" : 0
+  }, {
     "path" : "/Информация по номеру авто",
     "enabled" : true,
     "shared" : false,
@@ -113,22 +131,7 @@
     "patterns" : [ ],
     "priority" : 0
   } ],
-  "entities" : [ {
-    "entity" : {
-      "name" : "Новая_сущность",
-      "enabled" : true,
-      "shared" : false,
-      "type" : "annotation",
-      "priority" : 1,
-      "noSpelling" : true,
-      "noMorph" : false,
-      "phoneticSearch" : false,
-      "fuzzySearch" : false,
-      "client" : false,
-      "hidden" : false
-    },
-    "records" : [ ]
-  } ],
+  "entities" : [ ],
   "enabledSystemEntities" : [ "duckling.number", "duckling.time", "duckling.duration", "duckling.phone-number", "duckling.email", "duckling.url" ],
   "spellerDictionary" : [ ],
   "systemEntities" : [ {
