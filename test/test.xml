@@ -2,9 +2,8 @@
     <test-case>
     <q>/start</q>
     <a state = "/Start"/>
-    <q>Пока</q>
-    <a state = "/Bye"/>
     <q>Как дела</q>
     <a state = "/NoMatch"/>
+    <a state = "/Меню"/>
     </test-case>
 </test>    
