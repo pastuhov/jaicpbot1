@@ -1,5 +1,8 @@
 require: slotfilling/slotFilling.sc
   module = sys.zb-common
+  
+require: pipedream.js
+
 theme: /
 
     state: Start || sessionResult = "Сценарий начинается отсюда", sessionResultColor = "#143AD1"
@@ -101,3 +104,17 @@ theme: /
     state: Получили данные || sessionResult = "Здесь надо будет научить бота обрабатывать ответ сервера", sessionResultColor = "#CD4C2B"
         a: Кажется, я не поняла, что мне ответили. Научите меня разбираться с этим, пожалуйста :) || htmlEnabled = false, html = "Кажется, я не поняла, что мне ответили. Научите меня разбираться с этим, пожалуйста :)"
         go!: /Меню
+        
+    state: SendRequest
+        intent!: /send request
+        script:
+            var payload = $caila.inflect($parseTree._geo, ["nomn"]);
+            sendRequest(payload).then(function (res) {
+                if (res && res.inspect) {
+                    $reactions.answer("Запрос отправлен, вот тут глянь " + res.inspect );
+                } else {
+                    $reactions.answer("Что-то сервер барахлит. Не могу.");
+                }
+            }).catch(function (err) {
+                $reactions.answer("Что-то сервер барахлит. Не могу.");
+            });
